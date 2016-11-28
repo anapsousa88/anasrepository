@@ -1,0 +1,36 @@
+CREATE TABLE tbcarro
+(
+  id serial NOT NULL,
+  nome_piloto character varying,
+  nome_equipe character varying,
+  modelo character varying,
+  potencia character varying
+);
+
+CREATE TABLE tbcorrida
+(
+  id serial NOT NULL,
+  id_pista_fk integer,
+  id_carro1_fk integer,
+  id_carro2_fk integer,
+  nome_corrida character varying
+);
+
+CREATE TABLE tbpista
+(
+  id serial NOT NULL,
+  nome_pista character varying
+);
+
+CREATE TABLE tbtrecho
+(
+  id serial NOT NULL,
+  nome_trecho character varying,
+  acelera_reduz character varying
+);
+
+CREATE TABLE tbtrechopista
+(
+  id_pista integer NOT NULL,
+  id_trecho integer NOT NULL
+);
