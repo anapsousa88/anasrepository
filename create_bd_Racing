@@ -1,36 +1,40 @@
-CREATE TABLE tbcarro
+DROP SCHEMA IF EXISTS 'bdracing';
+
+CREATE SCHEMA IF NOT EXISTS 'bdracing' DEFAULT CHARACTER SET utf8;
+
+CREATE TABLE 'tbcarro'
 (
-  id serial NOT NULL,
-  nome_piloto character varying,
-  nome_equipe character varying,
-  modelo character varying,
-  potencia character varying
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'nome_piloto' VARCHAR(30) NOT NULL,
+  'nome_equipe' VARCHAR(15) NOT NULL,
+  'modelo' VARCHAR(15) NOT NULL,
+  'potencia' VARCHAR NOT NULL,
 );
 
-CREATE TABLE tbcorrida
+CREATE TABLE 'tbcorrida'
 (
-  id serial NOT NULL,
-  id_pista_fk integer,
-  id_carro1_fk integer,
-  id_carro2_fk integer,
-  nome_corrida character varying
+  'id serial' NOT NULL,
+  'id_pista_fk' INT,
+  'id_carro1_fk' INT,
+  'id_carro2_fk' INT,
+  'nome_corrida' VARCHAR,
 );
 
-CREATE TABLE tbpista
+CREATE TABLE 'tbpista'
 (
-  id serial NOT NULL,
-  nome_pista character varying
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'nome_pista' VARCHAR,
 );
 
-CREATE TABLE tbtrecho
+CREATE TABLE 'tbtrecho'
 (
-  id serial NOT NULL,
-  nome_trecho character varying,
-  acelera_reduz character varying
+  'id' INT NOT NULL AUTO_INCREMENT,
+  'nome_trecho' VARCHAR,
+  'acelera_reduz' VARCHAR,
 );
 
-CREATE TABLE tbtrechopista
+CREATE TABLE 'tbtrechopista'
 (
-  id_pista integer NOT NULL,
-  id_trecho integer NOT NULL
+  'id_pista' INT NOT NULL,
+  'id_trecho' INT NOT NULL
 );
